@@ -1,8 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState,useRef} from 'react';
+
 import axios from 'axios';
 import './App.css';
 
 function App() {
+    const userNameRef = useRef(null);
 
    const[users, setUsers]= useState([]);
 
@@ -19,12 +21,13 @@ function App() {
 
 
     const createUser = ()=>{
-        axios.post("http://localhost:7542/users").then(res => {
+        axios.post("http://localhost:7542/users", {id: new Date, name:userNameRef.current.value}).then(res => {
            getUsers();
         })
     }
 
     return (<>
+            <input ref={userNameRef}/>
         <div>
             <button onClick={createUser}>create user</button>
         </div>
