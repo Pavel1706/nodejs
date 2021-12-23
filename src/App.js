@@ -26,13 +26,11 @@ function App() {
         })
     }
 
-    const onChange = (e)=> {
-        setValue(e.currentTarget.value)
-    }
+
 
     return (<>
             <div>
-            <input onChange={onChange} ref={userNameRef}/>
+            <input  ref={userNameRef}/>
             </div>
             <div>
                 <button onClick={createUser}>create user</button>
