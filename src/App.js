@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {
     const userNameRef = useRef(null);
-
+    const [value, setValue]=useState('')
     const [users, setUsers] = useState([]);
 
     const getUsers = () => {
@@ -26,9 +26,13 @@ function App() {
         })
     }
 
+    const onChange = (e)=> {
+        setValue(e.currentTarget.value)
+    }
+
     return (<>
             <div>
-            <input ref={userNameRef}/>
+            <input onChange={onChange} ref={userNameRef}/>
             </div>
             <div>
                 <button onClick={createUser}>create user</button>
