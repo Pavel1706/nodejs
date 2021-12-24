@@ -5,7 +5,6 @@ import './App.css';
 
 function App() {
     const userNameRef = useRef(null);
-    const [value, setValue]=useState('')
     const [users, setUsers] = useState([]);
 
     const getUsers = () => {
