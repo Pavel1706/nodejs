@@ -13,7 +13,6 @@ function App() {
         });
     }
 
-
     useEffect(() => {
         getUsers()
     }, []);
@@ -27,7 +26,7 @@ function App() {
 
 
 
-    return (<>
+    return (<div>
             <div>
             <input  ref={userNameRef}/>
             </div>
@@ -37,7 +36,7 @@ function App() {
             <div>
                 {users.map(u => <div key={u.id}>{u.name}</div>)}
             </div>
-        </>
+        </div>
     );
 }
 
